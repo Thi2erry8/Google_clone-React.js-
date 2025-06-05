@@ -1,16 +1,21 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import Footer from './component/Footer'
+import Navbar from './component/Navbar'
+import Routes from './component/Routes'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const [darkTheme, setDarktheme] = useState(false) ;
+   
   return (
     <>
-      <h1 class="text-3xl font-bold underline">
-            Hello world!
-       </h1>
+      <div className={darkTheme ? 'dark' : ''}>
+             <div className="bg-gray-100 dark:bg-gray-900 dark:text-gray-100 min-h-screen">
+                   <Navbar/>
+                   <Routes/>
+                   <Footer/>
+             </div>  
+       </div> 
     </>
   )
 }
